@@ -1,0 +1,262 @@
+body {
+  align-content: center;
+  text-align: left;
+  width: 640px;
+  margin: 0px auto;
+  font-family: "Montserrat", sans-serif;
+
+  letter-spacing: 0.5px;
+  color: #111d5e;
+  background-image: 
+  linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%);
+}
+
+.app-bg {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-radius: 20px;
+  border-color: rgba(255, 255, 255, 0.438);
+  border-width: 2px;
+  margin: 30px 50px 30px;
+  padding: 30px 30px 0px;
+}
+
+/* Form Start */
+
+form {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+#search-city {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #f35010;
+  font-family: "Montserrat", sans-serif;
+}
+
+form {
+  display: inline;
+  align-items: center;
+}
+
+input {
+  width: 200px;
+  height: 35px;
+  border-radius: 3px;
+  border: none;
+  padding-left: 10px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+#go-button {
+  border: none;
+  background-color: #f35010a6;
+  color: white;
+  font-weight: bolder;
+  height: 30px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+#go-button:hover {
+  cursor: pointer;
+}
+
+#go-button:focus {
+  outline: 0;
+}
+
+#current-button {
+  border: none;
+  background-color: #f35010a6;
+  height: 30px;
+  border-radius: 3px;
+  margin-left: 5px;
+  color: white;
+}
+
+#current-button:hover {
+  cursor: pointer;
+}
+
+#current-button:focus {
+  outline: 0;
+}
+
+/* Form end */
+
+h1 {
+  letter-spacing: 1px;
+  font-size: 30px;
+  font-weight: 600px;
+  text-shadow: 3px 8px 10px #44444428;
+}
+
+#current-time {
+  font-size: 25px;
+  margin-right: 20px;
+  font-weight: bolder;
+}
+
+#current-day {
+  font-size: 20px;
+}
+
+.main-temp {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 20px 50px;
+  width: 380px;
+  margin: 10px 0px auto;
+}
+
+.first-temp {
+  font-size: 50px;
+  font-weight: bolder;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 20px;
+  text-shadow: 3px 8px 10px #44444428;
+  color: #f35010;
+}
+
+#temp-change {
+  font-size: 20px;
+  vertical-align: top;
+  font-weight: lighter;
+}
+
+#celsius:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#fahrenheit:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#description {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#main-icon {
+  width: 80px;
+  height: 80px;
+  float: right;
+  box-shadow: gray;
+}
+
+
+
+#forecast-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  /* margin: 30px 0px 30px 0px;
+  padding: 30px 5px 30px;
+  overflow: hidden; */
+  padding: 20px 5px 20px 5px;
+  overflow: hidden;
+
+
+
+}
+
+li {
+  
+  display: inline-block;
+  text-align: center;
+  margin: 5px;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 10px 0px 10px 0px;
+}
+
+/* #sub-icon { 
+  width: 40px;
+  height: 40px;
+}  */
+
+#sub-time {
+    font-size: 15px;
+}
+
+#sub-temp {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.footer {
+  text-align: center;
+}
+
+
+
+/* Colour Pickers
+
+.colour-picker {
+  margin-top: 20px;
+  font-weight: 400px;
+  letter-spacing: 0.5px;
+  margin-left: 130px;
+}
+
+.blue,
+.yellow,
+.green,
+.orange,
+.purple {
+  margin: 0px 25px 0px;
+  height: 20px;
+  width: 20px;
+  transition: 2ms;
+  border: thin;
+  border-radius: 50%;
+}
+
+.blue {
+  background-color: #e2ecf8;
+}
+
+.yellow {
+  background-color: #fef9db;
+}
+
+.green {
+  background-color: #d4ecdd;
+}
+
+.orange {
+  background-color: #fadfd9;
+}
+
+:hover.blue,
+.yellow,
+.green,
+.orange {
+  cursor: pointer;
+}
+
+:focus.blue,
+.yellow,
+.green,
+.orange {
+  outline: 0;
+}
