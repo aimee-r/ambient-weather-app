@@ -1,7 +1,7 @@
 body {
   align-content: center;
   text-align: left;
-  width: 600px;
+  width: 530px;
   margin: 0px auto;
   font-family: "Montserrat", sans-serif;
 
@@ -21,7 +21,7 @@ body {
   border-radius: 20px;
   border-color: rgba(255, 255, 255, 0.438);
   border-width: 2px;
-  margin: 30px;
+  margin: 30px 0px auto;
   padding: 30px;
 }
 
@@ -114,8 +114,9 @@ h1 {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   padding: 30px 40px;
-  width: 380px;
-  margin: 10px 0px auto;
+  margin: 0 auto;
+  margin-top: 30px;
+
 }
 
 .first-temp {
@@ -158,11 +159,8 @@ h1 {
 
 ul {
   list-style-type: none;
-  /* margin: 30px 0px 30px 0px;
-  padding: 30px 5px 30px;
-  overflow: hidden; */
   padding: 10px 5px 10px 5px;
-  overflow: hidden;
+  text-align: center;
 
 }
 
@@ -170,7 +168,7 @@ li {
   
   display: inline-block;
   text-align: center;
-  margin: 5px;
+  margin: 0 5px 0 5px;
   align-items: center;
   text-decoration: none;
   font-weight: bold;
@@ -179,11 +177,6 @@ li {
   border-radius: 20px;
   padding: 10px 0px 10px 0px;
 }
-
-/* #sub-icon { 
-  width: 40px;
-  height: 40px;
-}  */
 
 #sub-time {
     font-size: 15px;
