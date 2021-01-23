@@ -22,23 +22,28 @@ function formatDate(timestamp) {
 }
 
 function formatHours(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+   let date = new Date(timestamp);
+   let hours = date.getHours();
+   if (hours < 10) {
+     hours = `0${hours}`;
+   }
+   let minutes = date.getMinutes();
+   if (minutes < 10) {
+     minutes = `0${minutes}`;
+   }
 
-  return `${hours}:${minutes}`;
+   return `${hours}:${minutes}`;
 }
 
 
 // Search Location
 
 function showWeather(response) {
+// currentTime = new Date(response.data.dt *1000);
+//   let timeChange = document.querySelector("#current-time");
+//   timeChange.innerHTML = `${currentTime.toLocaleString()}`;
+//   // document.write(currentTime.toGMTString()+"<br>"+currentTime.toLocaleString());
+
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
 
@@ -49,10 +54,6 @@ function showWeather(response) {
   let description = response.data.weather[0].main;
   let descWeather = document.querySelector("#description");
   descWeather.innerHTML = `${description}`;
-
-//   if (description == "Clouds") {
-//     document.body.style.background = "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)";
-//   } 
 
   let windSpeed = Math.round(response.data.wind.speed);
   let descWind = document.querySelector("#wind");
