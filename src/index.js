@@ -35,14 +35,9 @@ function formatHours(timestamp) {
    return `${hours}:${minutes}`;
 }
 
-
 // Search Location
 
 function showWeather(response) {
-// currentTime = new Date(response.data.dt *1000);
-//   let timeChange = document.querySelector("#current-time");
-//   timeChange.innerHTML = `${currentTime.toLocaleString()}`;
-//   // document.write(currentTime.toGMTString()+"<br>"+currentTime.toLocaleString());
 
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
@@ -98,6 +93,8 @@ iconMain.src="images/windy.png";
 }
 
 }
+
+// Form Search City
  
 function enterCity(city) {
   let apiKey = "5bed8f72cbd60b2d0edc71095210ab04";
@@ -150,23 +147,72 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+// // Forecast
+
+function showForecast(response) {
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 4; index++) {
+    forecast = response.data.list[index];
+    let forecastMax = forecast.main.temp_max;
+    let forecastMin = forecast.main.temp_min;
+    forecastElement.innerHTML += `
+    <li class ="forecast-block">
+        <div id="sub-time">${formatHours(forecast.dt * 1000)}</div>
+        <div id="sub-icon">
+        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
+        </div>
+                
+    <div id="sub-temp"><strong> 
+    ${Math.round(forecastMax)}°C </strong> | ${Math.round(forecastMin)}°C
+                </div>
+            </li>
+  `;
+  }
+}
+
+// Forecast
+
+// function showForecast(response) {
+//   let forecastElement = document.querySelector("#weather-forecast");
+//   forecastElement.innerHTML = null;
+//   let forecast = null;
+
+//   for (let index = 0; index < 4; index++) {
+//     forecast = response.data.list[index];
+//     forecastElement.innerHTML += `
+//     <li class ="forecast-block">
+//         <div id="sub-time">${formatHours(forecast.dt * 1000)}</div>
+//         <div id="sub-icon">
+//         <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
+//         </div>
+                
+//     <div id="sub-temp"><strong> 
+//     ${Math.round(forecast.main.temp_max)}°C </strong> | ${Math.round(forecast.main.temp_min)}°C
+//                 </div>
+//             </li>
+
+//   `;
+//   }
+// }
+
 // Celsius - Farenheit conversion
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let tempChange = document.querySelector("#temp");
-//   celsiusLink.classList.remove("active");
-//   fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (tempCelsius * 9) / 5 + 32;
   tempChange.innerHTML = Math.round(fahrenheitTemp);
+
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-//   celsiusLink.classList.add("active");
-//   fahrenheitLink.classList.remove("active");
  let tempChange = document.querySelector("#temp");
   tempChange.innerHTML = Math.round(tempCelsius);
+
 }
 
 let tempCelsius = null;
@@ -180,79 +226,44 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-// Forecast
-
-function showForecast(response) {
-  let forecastElement = document.querySelector("#weather-forecast");
-  forecastElement.innerHTML = null;
-  let forecast = null;
-
-  for (let index = 0; index < 4; index++) {
-    forecast = response.data.list[index];
-    forecastElement.innerHTML += `
-    <li class ="forecast-block">
-        <div id="sub-time">${formatHours(forecast.dt * 1000)}</div>
-        <div id="sub-icon">
-        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
-        </div>
-                
-    <div id="sub-temp"><strong> 
-    ${Math.round(forecast.main.temp_max)}°C </strong> | ${Math.round(forecast.main.temp_min)}°C
-                </div>
-            </li>
-
-  `;
-  }
-}
-
-
-
 
 // Colour Picker Buttons
 
-// function chBackcolorBlue() {
-//   document.body.style.background = "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)";
-// }
+function chBackcolorBlue() {
+  document.body.style.background = "linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%)";
+  document.getElementById("current-button").style.background = "green";
+  document.getElementById("search-city").style.color = "green";
+  document.getElementById("go-button").style.background = "green";
+  document.getElementById("temp").style.color = "green";
+  document.getElementById("temp-change").style.color = "green";
+ 
+}
 
-// let blueButton = document.querySelector(".blue");
-// blueButton.addEventListener("click", chBackcolorBlue);
+let blueButton = document.querySelector(".blue");
+blueButton.addEventListener("click", chBackcolorBlue);
 
 function chBackcolorYellow() {
-  document.body.style.background = "linear-gradient(to top, #fddb92 0%, #d1fdff 100%)";
+  document.body.style.background = "linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%)";
+  document.getElementById("current-button").style.background = "#f35010a6";
+  document.getElementById("search-city").style.color = "#f35010";
+  document.getElementById("go-button").style.background = "#f35010a6";
+  document.getElementById("temp").style.color = "#f35010";
+  document.getElementById("temp-change").style.color = "#f35010a6";
+  
+//  document.getElementById("wpbody-content").getElementsByClassName("wrap").getElementsByTagName('h1')[0].innerHTML = 'Application Forms';
 }
 
 let yellowButton = document.querySelector(".yellow");
 yellowButton.addEventListener("click", chBackcolorYellow);
 
-function chBackcolorGreen() {
-  document.body.style.background = "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)";
-}
-
-let greenButton = document.querySelector(".green");
-greenButton.addEventListener("click", chBackcolorGreen);
-
 function chBackcolorOrange() {
-  document.body.style.background = "#fadfd9";
+  document.body.style.background = "linear-gradient(to top, #cc208e 0%, #6713d2 100%)";
+  document.getElementById("current-button").style.background = "pink";
+  document.getElementById("search-city").style.color = "pink";
+  document.getElementById("go-button").style.background = "pink";
+  document.getElementById("temp").style.color = "pink";
+  document.getElementById("temp-change").style.color = "pink";
 }
 
 let orangeButton = document.querySelector(".orange");
 orangeButton.addEventListener("click", chBackcolorOrange);
-
-
-//  if (description == Clouds) {
-//      chBackcolorBlue()
-//     // document.body.style.background = "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)";
-//   }
-
-
-
-//   let description = response.data.weather[0].main;
-//   let descWeather = document.querySelector("#description");
-//   descWeather.innerHTML = `${description}`;
-
-// function chBackcolorBlue() {
-//     if ()
-//   document.body.style.background = "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)";
-// }
-
-// form.addEventListener("submit", chBackcolorBlue);
