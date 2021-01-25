@@ -111,10 +111,6 @@ function citySubmit(event) {
   enterCity(city);
 }
 
-// let form = document.querySelector("#city-form");
-// form.addEventListener("submit", citySubmit);
-
-
 // Current Location
 
 function showCoords(position) {
@@ -173,31 +169,6 @@ function showForecast(response) {
   }
 }
 
-// Forecast
-
-// function showForecast(response) {
-//   let forecastElement = document.querySelector("#weather-forecast");
-//   forecastElement.innerHTML = null;
-//   let forecast = null;
-
-//   for (let index = 0; index < 4; index++) {
-//     forecast = response.data.list[index];
-//     forecastElement.innerHTML += `
-//     <li class ="forecast-block">
-//         <div id="sub-time">${formatHours(forecast.dt * 1000)}</div>
-//         <div id="sub-icon">
-//         <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
-//         </div>
-                
-//     <div id="sub-temp"><strong> 
-//     ${Math.round(forecast.main.temp_max)}°C </strong> | ${Math.round(forecast.main.temp_min)}°C
-//                 </div>
-//             </li>
-
-//   `;
-//   }
-// }
-
 // Celsius - Farenheit conversion
 
 function displayFahrenheitTemperature(event) {
@@ -231,11 +202,11 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function chBackcolorBlue() {
   document.body.style.background = "linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%)";
-  document.getElementById("current-button").style.background = "green";
-  document.getElementById("search-city").style.color = "green";
-  document.getElementById("go-button").style.background = "green";
-  document.getElementById("temp").style.color = "green";
-  document.getElementById("temp-change").style.color = "green";
+  document.getElementById("current-button").style.background = "#1f3d88ab";
+  document.getElementById("search-city").style.color = "#1f3c88";
+  document.getElementById("go-button").style.background = "#1f3d88ab";
+  document.getElementById("temp").style.color = "#1f3c88";
+  document.getElementById("temp-change").style.color = "#1f3c88";
  
 }
 
@@ -250,7 +221,6 @@ function chBackcolorYellow() {
   document.getElementById("temp").style.color = "#f35010";
   document.getElementById("temp-change").style.color = "#f35010a6";
   
-//  document.getElementById("wpbody-content").getElementsByClassName("wrap").getElementsByTagName('h1')[0].innerHTML = 'Application Forms';
 }
 
 let yellowButton = document.querySelector(".yellow");
@@ -258,11 +228,11 @@ yellowButton.addEventListener("click", chBackcolorYellow);
 
 function chBackcolorOrange() {
   document.body.style.background = "linear-gradient(to top, #cc208e 0%, #6713d2 100%)";
-  document.getElementById("current-button").style.background = "pink";
-  document.getElementById("search-city").style.color = "pink";
-  document.getElementById("go-button").style.background = "pink";
-  document.getElementById("temp").style.color = "pink";
-  document.getElementById("temp-change").style.color = "pink";
+  document.getElementById("current-button").style.background = "#892cdc";
+  document.getElementById("search-city").style.color = "#892cdc";
+  document.getElementById("go-button").style.background = "#892cdc";
+  document.getElementById("temp").style.color = "#892cdc";
+  document.getElementById("temp-change").style.color = "#892cdc";
 }
 
 let orangeButton = document.querySelector(".orange");
